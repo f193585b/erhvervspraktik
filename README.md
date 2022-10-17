@@ -3,14 +3,14 @@
 | Klokken | Mandag | Tirsdag |Onsdag |Torsdag |Fredag |
 | - | - | - | - | - | - |
 | 09| Adgangskort i receptionen | Adgangskort i receptionen |Adgangskort i receptionen |Adgangskort i receptionen |Adgangskort i receptionen |
-|9:30 |Rundtur i Schultz |Scrum sprint review |Par programmering |Par programmering |PowerShell eller Javascript |
+|9:30 | [Rundtur i Schultz](#rundtur-i-schultz) | [Scrum sprint review](#scrum-sprint-review) | [Par programmering](#par-programmering) |Par programmering  |PowerShell eller Javascript |
 |10:15 |Pause |Pause |Pause |Pause |Pause |
-|10:30 |Daily scrum |Daily scrum |Daily scrum |Daily scrum |Daily scrum |
-|10:45 |Opsætning software |Scrum sprint retrospective |PowerShell eller Javascript |PowerShell eller Javascript |Webside design |
+|10:30 | [Daily scrum](#daily-scrum) |Daily scrum |Daily scrum |Daily scrum |Daily scrum |
+|10:45 | [Opsætning software](#opsætning-af-software) | [Scrum sprint retrospective](#scrum-sprint-retrospective) |[PowerShell eller Javascript](#powershell-eller-javascript-alternativt-også-python) | PowerShell eller Javascript |Webside design |
 |11:30 |Frokost |Frokost |Frokost |Frokost |Frokost |
-|12 |Forstå SCRUM |Scrum sprint planning |Webside design |Software struktur |Git versionsstyring |
+|12 |[Forstå SCRUM](#forstå-scrum-og-hvordan-man-arbejder-i-en-it-virksomhed) | [Scrum sprint planning](#scrum-sprint-planning) |Webside design | [Software struktur](#software-struktur) |Git versionsstyring |
 |13:15 |Pause |Pause |Pause |Pause |Review webside og kode |
-|13:30 |Webside design |IT-sikkerhed |Git versionsstyring |Git versionsstyring |Fri leg? |
+|13:30 | [Webside design](#webside-design----lær-hvad-kode-og-html-er) | [IT-sikkerhed](#it-sikkerhed) | [Git versionsstyring](#git-versionsstyring) |Git versionsstyring |Fri leg? |
 |15 |Oprydning og adgangskort |Oprydning og adgangskort |Oprydning og adgangskort |Oprydning og adgangskort |Oprydning og adgangskort |
 
 
