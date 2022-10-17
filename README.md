@@ -93,6 +93,7 @@ Alle temaer skal nemt kunne findes fra forsiden.
 Læs siderne
 
 <https://sikkerdigital.dk/borger/fem-sikre>
+
 <https://sikkerdigital.dk/virksomhed/syv-raad-om-it-sikkerhed>
 
 Læs om kryptering på Wikipedia
@@ -104,6 +105,7 @@ Opgave: Find ud af hvordan du kan hjælpe andre med at blive bedre til it-sikker
 <https://da.wikipedia.org/wiki/Parprogrammering>
 
 Vi programmerer og udvikler sammen på en løsning til et konkret problem til jobcenter-systemet Schultz Fasit
+
 <https://schultz.dk/loesninger/schultz-fasit/>
 
 Sagsbehandlerne i jobcentre skal let kunne udføre deres arbejde, derfor tilpasser vi den grafiske brugergrænseflade så det er nemt at indtaste data.
@@ -121,13 +123,14 @@ Gem og brug data som en softwareudvikler.
 Delopgave: Indtast et password i konsollen og få programmet til at fortælle om det er godt nok
 
 ### Gem og afprøv password
-### Et password må aldrig gemmes i klartekst. Derimod skal man gemme det kryptografisk sikkert.
+#### Et password må aldrig gemmes i klartekst. Derimod skal man gemme det kryptografisk sikkert.
 Anvend kryptografisk hashing og se hvordan et password kommer til at se ud når det gemmes i en database.# 
-### Delopgave: Vis "Indtast password"-felt og test om man kan logge ind på websiden
+Delopgave: Vis "Indtast password"-felt og test om man kan logge ind på websiden
 
 ### Cat Fact API (se side 6 for HTML eksempel)
 
 [https://catfact.ninja](https://catfact.ninja/)
+
 <https://documenter.getpostman.com/view/1946054/S11HvKSz>
 
 Delopgave: Vis tilfældige facts om katte på websiden
@@ -143,19 +146,25 @@ Delopgave: Vis indtastningsfelt der kan slå et engelsk ord op på websiden
 
 ### El pris-API
 
-<https://www.energidataservice.dk/tso-electricity/elspotprices>\
-<https://www.energidataservice.dk/guides/api-guides>\
-<https://api.energidataservice.dk/dataset/Elspotprices?limit=5>\
+<https://www.energidataservice.dk/tso-electricity/elspotprices>
+
+<https://www.energidataservice.dk/guides/api-guides>
+
+<https://api.energidataservice.dk/dataset/Elspotprices?limit=5>
+
 <https://api.energidataservice.dk/meta/dataset/>
 
-#### Delopgave: Vis elprisen time for time
+ Delopgave: Vis elprisen time for time
 - find højeste, laveste og gennemsnit for dagen
 - vis indtastningsfelt som kan udvælge dataset og datoer
 
 #### DMI gratis data:
 <https://www.dmi.dk/friedata/guides-til-frie-data/>
+
 <https://confluence.govcloud.dk/display/FDAPI>
+
 <https://dmigw.govcloud.dk/v2/metObs/swagger-ui/index.html>
+
 <https://www.dmi.dk/friedata/observationer/>
 
 Slutopgave (hvis der er tid til det): Vis vejret for en dansk by på websiden
