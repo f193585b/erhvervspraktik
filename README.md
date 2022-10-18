@@ -14,7 +14,7 @@
 |15 |Oprydning og adgangskort |Oprydning og adgangskort |Oprydning og adgangskort |Oprydning og adgangskort |Oprydning og adgangskort |
 
 
-
+---
 
 ## Rundtur i Schultz
 
@@ -29,6 +29,7 @@ Vores daglige møde hvor vi opdaterer hinanden om hvad vi laver og har af udford
 
 Opgave: Lyt med
 
+---
 ## Opsætning af software
 
 Til udvikling skal der anvendes nogle programmer.
@@ -38,6 +39,7 @@ Opgave: Hent og installér Visual Studio Code, Git versionsstyring og PowerShell
 
           Opstart websideprojekt, afprøv PowerShell "Hello World" begynderguide og start et lokalt Git arkiv.
 
+---
 ## Forstå SCRUM og hvordan man arbejder i en it-virksomhed
 
 <https://advanz.dk/blog/hvad-er-scrum-metode/>
@@ -50,12 +52,14 @@ Opgave: Hent og installér Visual Studio Code, Git versionsstyring og PowerShell
 
 Opgave: Beskriv hvordan du arbejder i skolen og på arbejde, grafisk og med tekst
 
+---
 ## Scrum sprint review
 
 Teamet har sprint review
 
 Opgave: Lyt med på sprint review mødet
 
+---
 ## Scrum sprint retrospective
 
 Teamet har sprint retrospective
@@ -68,6 +72,7 @@ Teamet har sprint planning
 
 Opgave: Lyt med på sprint planning mødet
 
+---
 ## Webside design -- lær hvad kode og HTML er
 
 <https://www.w3schools.com/html/>
@@ -80,7 +85,7 @@ Temaerne skal være:
 
 Schultz, SCRUM, IT-sikkerhed, Programmering samt hvordan man bruger data fra internettet.
 
-## Websiden skal langsomt fyldes ud som ugen går.
+### Websiden skal langsomt fyldes ud som ugen går.
 
 Kravene til websiden er
 
@@ -88,6 +93,7 @@ Alt tekst der skal læses, skal være let at læse.
 Farver og billeder skal hjælpe til at gøre teksten forståelig.
 Alle temaer skal nemt kunne findes fra forsiden.
 
+---
 ## IT-sikkerhed
 
 Læs siderne
@@ -100,6 +106,20 @@ Læs om kryptering på Wikipedia
 
 Opgave: Find ud af hvordan du kan hjælpe andre med at blive bedre til it-sikkerhed
 
+![https://www.explainxkcd.com/wiki/index.php/936:_Password_Strength](https://www.explainxkcd.com/wiki/images/6/6a/password_strength.png)
+
+<https://www.explainxkcd.com/wiki/index.php/936:_Password_Strength>
+
+![https://www.explainxkcd.com/wiki/index.php/538:_Security](https://www.explainxkcd.com/wiki/images/3/34/security.png)
+
+<https://www.explainxkcd.com/wiki/index.php/538:_Security>
+
+![https://www.explainxkcd.com/wiki/index.php/2176:_How_Hacking_Works](https://www.explainxkcd.com/wiki/images/8/83/how_hacking_works.png)
+
+<https://www.explainxkcd.com/wiki/index.php/2176:_How_Hacking_Works>
+
+
+---
 ## Par programmering
 
 <https://da.wikipedia.org/wiki/Parprogrammering>
@@ -124,7 +144,8 @@ Delopgave: Indtast et password i konsollen og få programmet til at fortælle om
 
 ### Gem og afprøv password
 #### Et password må aldrig gemmes i klartekst. Derimod skal man gemme det kryptografisk sikkert.
-Anvend kryptografisk hashing og se hvordan et password kommer til at se ud når det gemmes i en database.# 
+Anvend kryptografisk hashing og se hvordan et password kommer til at se ud når det gemmes i en database.
+
 Delopgave: Vis "Indtast password"-felt og test om man kan logge ind på websiden
 
 ### Cat Fact API (se side 6 for HTML eksempel)
@@ -169,6 +190,8 @@ Delopgave: Vis indtastningsfelt der kan slå et engelsk ord op på websiden
 
 Slutopgave (hvis der er tid til det): Vis vejret for en dansk by på websiden
 
+
+---
 ## Git versionsstyring
 
 <https://github.com/f193585b/erhvervspraktik>
@@ -182,6 +205,7 @@ Vi ser på hvordan GitHub virker og hvordan Schultz anvender Git
 
 Opgave: Anvend Git til at versionstyre alle scripts og websiden
 
+---
 ## Software struktur
 <https://www.freecodecamp.org/news/crud-operations-explained/>
 
@@ -200,6 +224,7 @@ localStorage.clear(); //Slet alle gemte indlæg
 
 Opgave: Lav en simpel *todo* app ved brug af localstorage
 
+---
 # HTML eksempel
 ```html
 <!-- Eksempel på anvendelse af Cat fact API  -->
