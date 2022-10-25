@@ -67,13 +67,15 @@
 
 <body>
     <div class="navbar">
-        <a class="active" href="#"><i class="fa fa-fw fa-solid fa-hotdog"></i> Pølse</a>
+        <a onclick="document.getElementById('polsesiden').style.display = 'block';" class="active" href="#"><i
+                class="fa fa-fw fa-solid fa-hotdog"></i> Pølse</a>
 
         <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
         <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
         <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
     </div>
-    <div id="polsesiden">
+    <div id="polsesiden" style="display: none;">
+
         <h1>Verdens bedste pølsemad</h1>
         <p>Med ægte pølse.</p>
         <h2>Her er et billede af verdens bedste pølsemad</h2>
@@ -169,6 +171,11 @@
         <h2>Alle er glade</h2>
         <img src="glad emoji.jpg" alt="Trulli" width="1250" height="333">
     </div>
+    <div onclick="polsehop()" style="background-color:blue ; width:300px; height:300px"></div>
+    <p id="demo">Click me.</p>
+    <script>
+
+    </script>
 </body>
 
 </html>
