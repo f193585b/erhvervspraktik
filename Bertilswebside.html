@@ -171,10 +171,13 @@
         <h2>Alle er glade</h2>
         <img src="glad emoji.jpg" alt="Trulli" width="1250" height="333">
     </div>
-    <div onclick="polsehop()" style="background-color:blue ; width:300px; height:300px"></div>
-    <p id="demo">Click me.</p>
+    <div onclick="polsehop()" style="background-color:rgb(0, 204, 255) ; width:300px; height:300px"><div id="flappypolse" style="position: absolute;">🌭</div>
+ 
     <script>
-
+        function polsehop(){
+            document.getElementById("flappypolse").style.left = parseInt(document.getElementById("flappypolse").style.left || 0) + 10 +"px";
+            document.getElementById("flappypolse")
+        }
     </script>
 </body>
 
