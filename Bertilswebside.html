@@ -76,7 +76,7 @@
 
         <a onclick="document.getElementById('polsehopsiden').style.display = 'block';" ><i class="fa fa-fw fa-search"></i> Search</a>
         <a onclick="document.getElementById('itsikkerhedsiden').style.display = 'block';" ><i class="fa fa-fw fa-envelope"></i> Contact</a>
-        <a onclick="document.getElementById('polsesiden').style.display = 'block';" ><i class="fa fa-fw fa-user"></i> Login</a>
+        <a onclick="document.getElementById('catFactElementsiden').style.display = 'block';" ><i class="fa fa-fw fa-user"></i> Login</a>
     </div>
     <div id="polsesiden" style="display: none;">
 
@@ -222,6 +222,31 @@
                 }
             }
 
+        </script>
+
+<div id="catFactElementsiden" style="display: none;">
+    <h2>The XMLHttpRequest Object</h2>
+
+    <div><p>Hent en fact om en kat</p></div>
+    
+    <div><button  type="button"  onclick="loadCatFact()">Hent ny fact</button></div>
+    
+    <br  />
+    
+    <div  id="catFactElement"></div>
+    
+
+    </div>
+    <script>
+        function loadCatFact(){
+         const xhttp = new XMLHttpRequest();
+        xhttp.onload =function() {
+            document.getElementById("catFactElement").textContent = JSON.parse(this.responseText).fact;
+          }
+        
+          xhttp.open("GET", "https://catfact.ninja/fact");
+          xhttp.send();
+        }
         </script>
 </body>
 
