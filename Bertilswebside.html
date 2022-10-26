@@ -64,15 +64,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
+    integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <p>click = jump
     Mur = død
     Igennem hullerne i murene
     Må ikke ramme jorden eller loftet
     murene er randomly generated
-    
+
     murene bevæger sig fra højre mod venstre og fuglen bevæger sig op og ned
-    
-    </p>
+
+</p>
+
 <body>
     <div class="navbar">
         <a onclick="document.getElementById('polsesiden').style.display = 'block';" class="active" href="#"><i
@@ -178,15 +182,43 @@
         <img src="meget glad mand der spiser pølsemad.jfif" alt="Trulli" width="1250" height="300">
         <h2>Alle er glade</h2>
         <img src="glad emoji.jpg" alt="Trulli" width="1250" height="333">
+        <h2Z>Hvorfor mon de to pølser er så glade???</h2Z>
+        <img src="danmarks-gladeste-pølser.jpg" alt="Trulli" width="500" height="333">
+        <h2Z>Det er fordi de har gode og sikre passwords på alle derev medier, ja enda pølsesiden</h2Z>
+        <h2Z>Du skal forstå at et password er ikke bare godt fordi det er langt men det er godt fordi det varierer meget imellem for eksempel sotre og små bogstaver, tal og tegn som "!".</h2Z>
+        <h2Z>Du skal også have forskellige passwords på alle de forskellige medier og programmer du bruger fordi hvis der så er en der finder et af dine password så kan du begrændse hvor meget de kan logge ind på :)</h2Z>
+        <h2Z>Og sidst men ikke mindst så må du andrig dele dine passwords med nogen.</h2Z>
+
     </div>
-    <div onclick="polsehop()" style="background-color:rgb(0, 204, 255) ; width:300px; height:300px"><div id="flappypolse" style="position: absolute;">🌭</div>
- 
-    <script>
-        function polsehop(){
-            document.getElementById("flappypolse").style.left = parseInt(document.getElementById("flappypolse").style.left || 0) + 10 +"px";
-            document.getElementById("flappypolse")
-        }
-    </script>
+
+    <div id="polsehopsiden" style="display: none;">
+        <div onclick="polsehop()"
+            style="background-color:rgb(0, 204, 255) ; width:300px; height:300px; display: block;">
+            <div id="flappypolse" style="position: absolute;">🌭</div>
+        </div>
+
+        <script>
+            function polsehop() {
+                document.getElementById("flappypolse").style.left = parseInt(document.getElementById("flappypolse").style.left || 0) + 10 + "px";
+                document.getElementById("flappypolse")
+            }
+        </script>
+        <div id="itsikkerhedsiden" style="display: none;">
+            <div style="display: block;">var hash = CryptoJS.SHA256("Message");
+                <label for="fname">First name: </label>
+                <input onkeypress="testPassword()" type="text" id="fname" name="fname"><br><br>
+            </div>
+        </div>
+        <script>
+            function testPassword() {
+                var input = document.getElementById("fname").value;
+                var hash = CryptoJS.SHA256(input);
+                if (hash == "aa7edd7b6281a549cecfb577ed88e96d699a6505d470c9295301969f67379b03") {
+                    alert("Pølse!")
+                }
+            }
+
+        </script>
 </body>
 
 </html>
