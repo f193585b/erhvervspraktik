@@ -67,24 +67,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
     integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<p>click = jump
-    Mur = død
-    Igennem hullerne i murene
-    Må ikke ramme jorden eller loftet
-    murene er randomly generated
 
-    murene bevæger sig fra højre mod venstre og fuglen bevæger sig op og ned
-
-</p>
 
 <body>
     <div class="navbar">
-        <a onclick="document.getElementById('polsesiden').style.display = 'block';" class="active" href="#"><i
+        <a onclick="document.getElementById('polsesiden').style.display = 'block';" class="active"><i
                 class="fa fa-fw fa-solid fa-hotdog"></i> Pølse</a>
 
-        <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
-        <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-        <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
+        <a onclick="document.getElementById('polsehopsiden').style.display = 'block';" ><i class="fa fa-fw fa-search"></i> Search</a>
+        <a onclick="document.getElementById('itsikkerhedsiden').style.display = 'block';" ><i class="fa fa-fw fa-envelope"></i> Contact</a>
+        <a onclick="document.getElementById('polsesiden').style.display = 'block';" ><i class="fa fa-fw fa-user"></i> Login</a>
     </div>
     <div id="polsesiden" style="display: none;">
 
@@ -175,20 +167,14 @@
 
 
         <h2>Vi accepterer IKKE nogen form for vegetar eller veganisme</h2>
-        <img src="Vegetar mad.webp" alt="Trulli" width="1250" height="300">
+        <img src="Vegetar mad.jpg" alt="Trulli" width="1250" height="300">
         <h2>Alt skal indholde af nogen form af kød.</h2>
         <img src="ægte pølse.jpg" alt="Trulli" width="1250" height="300">
         <h2>Her er et billede af en meget glad man som spiser vores pølsemad</h2>
         <img src="meget glad mand der spiser pølsemad.jfif" alt="Trulli" width="1250" height="300">
         <h2>Alle er glade</h2>
         <img src="glad emoji.jpg" alt="Trulli" width="1250" height="333">
-        <h2Z>Hvorfor mon de to pølser er så glade???</h2Z>
-        <img src="danmarks-gladeste-pølser.jpg" alt="Trulli" width="500" height="333">
-        <h2Z>Det er fordi de har gode og sikre passwords på alle derev medier, ja enda pølsesiden</h2Z>
-        <h2Z>Du skal forstå at et password er ikke bare godt fordi det er langt men det er godt fordi det varierer meget imellem for eksempel sotre og små bogstaver, tal og tegn som "!".</h2Z>
-        <h2Z>Du skal også have forskellige passwords på alle de forskellige medier og programmer du bruger fordi hvis der så er en der finder et af dine password så kan du begrændse hvor meget de kan logge ind på :)</h2Z>
-        <h2Z>Og sidst men ikke mindst så må du andrig dele dine passwords med nogen.</h2Z>
-
+        
     </div>
 
     <div id="polsehopsiden" style="display: none;">
@@ -196,6 +182,17 @@
             style="background-color:rgb(0, 204, 255) ; width:300px; height:300px; display: block;">
             <div id="flappypolse" style="position: absolute;">🌭</div>
         </div>
+		<p>click = jump
+    Mur = død
+    Igennem hullerne i murene
+    Må ikke ramme jorden eller loftet
+    murene er randomly generated
+
+    murene bevæger sig fra højre mod venstre og fuglen bevæger sig op og ned
+
+</p>
+		</div>
+		
 
         <script>
             function polsehop() {
@@ -207,6 +204,13 @@
             <div style="display: block;">var hash = CryptoJS.SHA256("Message");
                 <label for="fname">First name: </label>
                 <input onkeypress="testPassword()" type="text" id="fname" name="fname"><br><br>
+				<h2Z>Hvorfor mon de to pølser er så glade???</h2Z>
+        <img src="danmarks-gladeste-pølser.jpg" alt="Trulli" width="500" height="333">
+        <h2Z>Det er fordi de har gode og sikre passwords på alle derev medier, ja enda pølsesiden</h2Z>
+        <h2Z>Du skal forstå at et password er ikke bare godt fordi det er langt men det er godt fordi det varierer meget imellem for eksempel sotre og små bogstaver, tal og tegn som "!".</h2Z>
+        <h2Z>Du skal også have forskellige passwords på alle de forskellige medier og programmer du bruger fordi hvis der så er en der finder et af dine password så kan du begrændse hvor meget de kan logge ind på :)</h2Z>
+        <h2Z>Og sidst men ikke mindst så må du andrig dele dine passwords med nogen.</h2Z>
+
             </div>
         </div>
         <script>
