@@ -39,7 +39,7 @@
         }
 
         .navbar a {
-            float: left;
+            float: top;
             padding: 12px;
             color: white;
             text-decoration: none;
@@ -74,7 +74,7 @@
         <a onclick="document.getElementById('polsesiden').style.display = 'block';" class="active"><i
                 class="fa fa-fw fa-solid fa-hotdog"></i> Pølse</a>
 
-        <a onclick="document.getElementById('polsehopsiden').style.display = 'block';" ><i class="fa fa-fw fa-search"></i> Search</a>
+        <a onclick="document.getElementById('polsehopsiden').style.display = 'block';" ><i class="fa fa-fw fa-gamepad"></i> flappypolse</a>
         <a onclick="document.getElementById('itsikkerhedsiden').style.display = 'block';" ><i class="fa fa-fw fa-envelope"></i> Contact</a>
         <a onclick="document.getElementById('catFactElementsiden').style.display = 'block';" ><i class="fa fa-fw fa-user"></i> Login</a>
     </div>
@@ -179,10 +179,32 @@
 
     <div id="polsehopsiden" style="display: none;">
         <div onclick="polsehop()"
-            style="background-color:rgb(0, 204, 255) ; width:300px; height:300px; display: block;">
-            <div id="flappypolse" style="position: absolute;">🌭</div>
+            style="background-color:rgb(0, 204, 255) ; width: 1000px; height: 600px; display: block;">
+            <div id="flappypolse" style="position: absolute; font-size: 50px;">🌭</div>
+           
         </div>
-		<p>click = jump
+        <div id="muren"
+            style="background-color:rgb(255, 200, 0) ; width: 10px; height: 600px; display: block; position: absolute; top: 0px; right:0px"></div>
+		<p>
+    <script>
+        var murRetning = "venstre";
+        setInterval(function () {
+            document.getElementById("flappypolse").style.bottom = parseInt(document.getElementById("flappypolse").style.bottom || 0) > 0 ? parseInt(document.getElementById("flappypolse").style.bottom || 0) - 1 + "px" : 0 + "px";
+            if(murRetning == "venstre") {
+            document.getElementById("muren").style.right =  parseInt(document.getElementById("muren").style.right || 0) + 1 + "px";
+            }
+            else {alert("meow")
+            document.getElementById("muren").style.right =  parseInt(document.getElementById("muren").style.right || 0) - 1 + "px";
+        }
+            if(document.getElementById("muren").style.right > 600) {
+                murRetning = "HOEJRE"
+            }
+            if(document.getElementById("muren").style.right < 0){
+                murRetning = "venstre"
+            }
+    }, 20);
+    </script>        
+            click = jump
     Mur = død
     Igennem hullerne i murene
     Må ikke ramme jorden eller loftet
@@ -196,7 +218,7 @@
 
         <script>
             function polsehop() {
-                document.getElementById("flappypolse").style.left = parseInt(document.getElementById("flappypolse").style.left || 0) + 10 + "px";
+                document.getElementById("flappypolse").style.bottom = parseInt(document.getElementById("flappypolse").style.bottom || 0) + 100 + "px";
                 document.getElementById("flappypolse")
             }
         </script>
