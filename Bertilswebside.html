@@ -193,14 +193,23 @@
             if(murRetning == "venstre") {
             document.getElementById("muren").style.right =  parseInt(document.getElementById("muren").style.right || 0) + 1 + "px";
             }
-            else {alert("meow")
+            else {
             document.getElementById("muren").style.right =  parseInt(document.getElementById("muren").style.right || 0) - 1 + "px";
         }
-            if(document.getElementById("muren").style.right > 600) {
+            if( parseInt(document.getElementById("muren").style.right) > 1300) {
                 murRetning = "HOEJRE"
             }
-            if(document.getElementById("muren").style.right < 0){
+            if( parseInt(document.getElementById("muren").style.right) < 0){
                 murRetning = "venstre"
+            }
+
+            if( parseInt(document.getElementById("muren").style.right) > 10
+              && parseInt(document.getElementById("muren").style.right) < 20
+              && parseInt(document.getElementById("flappypolse").style.bottom) > 350
+              && parseInt(document.getElementById("flappypolse").style.bottom) < 250
+            
+            ){
+                alert("død")
             }
     }, 20);
     </script>        
