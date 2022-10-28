@@ -281,7 +281,8 @@
         <br />
 
         <div id="catFactElement"></div>
-
+        <div><button type="button" onclick="loadDogFact()">Hent ny fact</button></div>
+        <div id="dogFactElement"></div>
 
     </div>
     <script>
@@ -293,6 +294,10 @@
 
             xhttp.open("GET", "https://catfact.ninja/fact");
             xhttp.send();
+        }
+        function loadDogFact() {
+                document.getElementById("dogFactElement").textContent = "Chihuahuaer er forvoksede rotter";
+     
         }
     </script>
 </body>
