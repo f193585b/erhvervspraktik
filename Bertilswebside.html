@@ -74,9 +74,12 @@
         <a onclick="document.getElementById('polsesiden').style.display = 'block';" class="active"><i
                 class="fa fa-fw fa-solid fa-hotdog"></i> Pølse</a>
 
-        <a onclick="document.getElementById('polsehopsiden').style.display = 'block';" ><i class="fa fa-fw fa-gamepad"></i> Flappypolse</a>
-        <a onclick="document.getElementById('itsikkerhedsiden').style.display = 'block';" ><i class="fa fa-fw fa-envelope"></i> Password Guide</a>
-        <a onclick="document.getElementById('catFactElementsiden').style.display = 'block';" ><i class="fa fa-fw fa-user"></i> Cat Facts</a>
+        <a onclick="document.getElementById('polsehopsiden').style.display = 'block';"><i
+                class="fa fa-fw fa-gamepad"></i> Flappypolse</a>
+        <a onclick="document.getElementById('itsikkerhedsiden').style.display = 'block';"><i
+                class="fa fa-fw fa-envelope"></i> Password Guide</a>
+        <a onclick="document.getElementById('catFactElementsiden').style.display = 'block';"><i
+                class="fa fa-fw fa-user"></i> Cat Facts</a>
     </div>
     <div id="polsesiden" style="display: none;">
 
@@ -174,111 +177,124 @@
         <img src="meget glad mand der spiser pølsemad.jfif" alt="Trulli" width="1250" height="300">
         <h2>Alle er glade</h2>
         <img src="glad emoji.jpg" alt="Trulli" width="1250" height="333">
-        
+
     </div>
 
     <div id="polsehopsiden" style="display: none;">
         <div onclick="polsehop()"
-            style="background-color:rgb(0, 204, 255) ; width: 1000px; height: 600px; display: block;">
-            <div id="flappypolse" style="position: absolute; font-size: 50px;">🌭</div>
-           
+            style="background-color:rgb(0, 204, 255) ; width: 1250px; height: 600px; display: block;">
+            <div id="flappypolse" style="position: absolute; font-size: 50px;right :650px">🌭</div>
+
         </div>
         <div id="muren"
-            style="background-color:rgb(255, 200, 0) ; width: 10px; height: 600px; display: block; position: absolute; top: 0px; right:0px"></div>
-		<p>
-    <script>
-        var murRetning = "venstre";
-        setInterval(function () {
-            document.getElementById("flappypolse").style.bottom = parseInt(document.getElementById("flappypolse").style.bottom || 0) > 0 ? parseInt(document.getElementById("flappypolse").style.bottom || 0) - 1 + "px" : 0 + "px";
-            if(murRetning == "venstre") {
-            document.getElementById("muren").style.right =  parseInt(document.getElementById("muren").style.right || 0) + 1 + "px";
-            }
-            else {
-            document.getElementById("muren").style.right =  parseInt(document.getElementById("muren").style.right || 0) - 1 + "px";
-        }
-            if( parseInt(document.getElementById("muren").style.right) > 1300) {
-                murRetning = "HOEJRE"
-            }
-            if( parseInt(document.getElementById("muren").style.right) < 0){
-                murRetning = "venstre"
-            }
-
-            if( parseInt(document.getElementById("muren").style.right) > 10
-              && parseInt(document.getElementById("muren").style.right) < 20
-              && parseInt(document.getElementById("flappypolse").style.bottom) > 350
-              && parseInt(document.getElementById("flappypolse").style.bottom) < 250
-            
-            ){
-                alert("død")
-            }
-    }, 20);
-    </script>        
-            click = jump
-    Mur = død
-    Igennem hullerne i murene
-    Må ikke ramme jorden eller loftet
-    murene er randomly generated
-
-    murene bevæger sig fra højre mod venstre og fuglen bevæger sig op og ned
-
-</p>
-		</div>
-		
-
-        <script>
-            function polsehop() {
-                document.getElementById("flappypolse").style.bottom = parseInt(document.getElementById("flappypolse").style.bottom || 0) + 100 + "px";
-                document.getElementById("flappypolse")
-            }
-        </script>
-        <div id="itsikkerhedsiden" style="display: none;">
-            <div style="display: block;">var hash = CryptoJS.SHA256("Message");
-                <label for="fname">First name: </label>
-                <input onkeypress="testPassword()" type="text" id="fname" name="fname"><br><br>
-				<h2Z>Hvorfor mon de to pølser er så glade???</h2Z>
-        <img src="danmarks-gladeste-pølser.jpg" alt="Trulli" width="500" height="333">
-        <h2Z>Det er fordi de har gode og sikre passwords på alle derev medier, ja enda pølsesiden</h2Z>
-        <h2Z>Du skal forstå at et password er ikke bare godt fordi det er langt men det er godt fordi det varierer meget imellem for eksempel sotre og små bogstaver, tal og tegn som "!".</h2Z>
-        <h2Z>Du skal også have forskellige passwords på alle de forskellige medier og programmer du bruger fordi hvis der så er en der finder et af dine password så kan du begrændse hvor meget de kan logge ind på :)</h2Z>
-        <h2Z>Og sidst men ikke mindst så må du andrig dele dine passwords med nogen.</h2Z>
-
-            </div>
+            style="background-color:rgb(255, 200, 0) ; width: 10px; height: 600px; display: block; position: absolute; top: 0px; right:0px">
         </div>
-        <script>
-            function testPassword() {
-                var input = document.getElementById("fname").value;
-                var hash = CryptoJS.SHA256(input);
-                if (hash == "aa7edd7b6281a549cecfb577ed88e96d699a6505d470c9295301969f67379b03") {
-                    alert("Pølse!")
-                }
+
+        <div id="murHul"
+            style="background-color:rgb(255, 255, 255) ; width: 10px; height: 50px; display: block; position: absolute; bottom: 300px; right:0px">
+        </div>
+        <p>
+            <script>
+                var murRetning = "venstre";
+                setInterval(function () {
+                    document.getElementById("flappypolse").style.bottom = parseInt(document.getElementById("flappypolse").style.bottom || 0) > 0 ? parseInt(document.getElementById("flappypolse").style.bottom || 0) - 1 + "px" : 0 + "px";
+                    if (murRetning == "venstre") {
+                        document.getElementById("muren").style.right = parseInt(document.getElementById("muren").style.right || 0) + 1 + "px";
+
+                        document.getElementById("murHul").style.right = parseInt(document.getElementById("murHul").style.right || 0) + 1 + "px";
+                    }
+                    else {
+                        document.getElementById("muren").style.right = parseInt(document.getElementById("muren").style.right || 0) - 1 + "px";
+                        document.getElementById("murHul").style.right = parseInt(document.getElementById("murHul").style.right || 0) - 1 + "px";
+                    }
+                    if (parseInt(document.getElementById("muren").style.right) > 1300) {
+                        murRetning = "HOEJRE"
+                    }
+                    if (parseInt(document.getElementById("muren").style.right) < 0) {
+                        murRetning = "venstre"
+                    }
+
+                    if (parseInt(document.getElementById("muren").style.right) > 645
+                        && parseInt(document.getElementById("muren").style.right) < 655
+                        && (parseInt(document.getElementById("flappypolse").style.bottom) > 350
+                        || parseInt(document.getElementById("flappypolse").style.bottom) < 250)
+
+                    ) {
+                        document.getElementById("flappypolse").style.fontSize = parseInt(document.getElementById("flappypolse").style.fontSize) - 1 + "px";
+                    }
+                }, 20);
+            </script>
+            click = jump
+            Mur = død
+            Igennem hullerne i murene
+            Må ikke ramme jorden eller loftet
+            murene er randomly generated
+
+            murene bevæger sig fra højre mod venstre og fuglen bevæger sig op og ned
+
+        </p>
+    </div>
+
+
+    <script>
+        function polsehop() {
+            document.getElementById("flappypolse").style.bottom = parseInt(document.getElementById("flappypolse").style.bottom || 0) + parseInt(document.getElementById("flappypolse").style.fontSize || 1) + "px";
+            
+        }
+    </script>
+    <div id="itsikkerhedsiden" style="display: none;">
+        <div style="display: block;">var hash = CryptoJS.SHA256("Message");
+            <label for="fname">First name: </label>
+            <input onkeypress="testPassword()" type="text" id="fname" name="fname"><br><br>
+            <h2Z>Hvorfor mon de to pølser er så glade???</h2Z>
+            <img src="danmarks-gladeste-pølser.jpg" alt="Trulli" width="500" height="333">
+            <h2Z>Det er fordi de har gode og sikre passwords på alle derev medier, ja enda pølsesiden</h2Z>
+            <h2Z>Du skal forstå at et password er ikke bare godt fordi det er langt men det er godt fordi det varierer
+                meget imellem for eksempel sotre og små bogstaver, tal og tegn som "!".</h2Z>
+            <h2Z>Du skal også have forskellige passwords på alle de forskellige medier og programmer du bruger fordi
+                hvis der så er en der finder et af dine password så kan du begrændse hvor meget de kan logge ind på :)
+            </h2Z>
+            <h2Z>Og sidst men ikke mindst så må du andrig dele dine passwords med nogen.</h2Z>
+
+        </div>
+    </div>
+    <script>
+        function testPassword() {
+            var input = document.getElementById("fname").value;
+            var hash = CryptoJS.SHA256(input);
+            if (hash == "aa7edd7b6281a549cecfb577ed88e96d699a6505d470c9295301969f67379b03") {
+                alert("Pølse!")
             }
+        }
 
-        </script>
+    </script>
 
-<div id="catFactElementsiden" style="display: none;">
-    <h2>The XMLHttpRequest Object</h2>
+    <div id="catFactElementsiden" style="display: none;">
+        <h2>The XMLHttpRequest Object</h2>
 
-    <div><p>Hent en fact om en kat</p></div>
-    
-    <div><button  type="button"  onclick="loadCatFact()">Hent ny fact</button></div>
-    
-    <br  />
-    
-    <div  id="catFactElement"></div>
-    
+        <div>
+            <p>Hent en fact om en kat</p>
+        </div>
+
+        <div><button type="button" onclick="loadCatFact()">Hent ny fact</button></div>
+
+        <br />
+
+        <div id="catFactElement"></div>
+
 
     </div>
     <script>
-        function loadCatFact(){
-         const xhttp = new XMLHttpRequest();
-        xhttp.onload =function() {
-            document.getElementById("catFactElement").textContent = JSON.parse(this.responseText).fact;
-          }
-        
-          xhttp.open("GET", "https://catfact.ninja/fact");
-          xhttp.send();
+        function loadCatFact() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                document.getElementById("catFactElement").textContent = JSON.parse(this.responseText).fact;
+            }
+
+            xhttp.open("GET", "https://catfact.ninja/fact");
+            xhttp.send();
         }
-        </script>
+    </script>
 </body>
 
 </html>
