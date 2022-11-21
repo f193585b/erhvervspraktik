@@ -1,0 +1,283 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      #bird {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        right: 50%;
+        bottom: 0%;
+        /* background-color: yellow; */
+      }
+
+      #wall1 {
+        box-sizing: content-box;
+        width: 150px;
+        height: 200px;
+        position: absolute;
+        right: 0%;
+        bottom: 0px;
+        background-image: url('wall.png');
+      }
+
+      #wall2 {
+        box-sizing: content-box;
+        width: 150px;
+        height: 200px;
+        background-image: url('wall.png');
+        position: absolute;
+        right: -600px;
+        bottom: 0px;
+      }
+
+      #wall3 {
+        box-sizing: content-box;
+        width: 150px;
+        height: 200px;
+        background-image: url('wall.png');
+        position: absolute;
+        right: -300px;
+        bottom: 500px;
+      }
+      .navbar {
+        width: 100%;
+        background-color: #555;
+        overflow: auto;
+      }
+
+      .navbar {
+        width: 100%;
+        background-color: rgb(0, 0, 77);
+        overflow: auto;
+        border-right-width: 5px;
+        border-right-color: whitesmoke;
+      }
+
+      .navbar a {
+        float: left;
+        padding: 12px;
+        border-style: solid dotted none none;
+        color:  whitesmoke;
+        text-decoration: none;
+        font-size: 17px;
+      }
+
+      .navbar a:hover {
+        background-color: rgb(84, 2, 84);
+      }
+
+      .active {
+        background-color: purple;
+      }
+    </style>
+
+    <script>
+      var lifeCounter = 100;
+      var timeCounter = 10000000;
+      var moveBoxCountDownInit = 10;
+      var moveBoxCountDown = 100;
+      var increaseDifficulty = 1000;
+      var gravityCountdown = 100;
+      setInterval(function () {
+        //timeCounter = timeCounter - 1;
+        document.getElementById("counter").innerText = lifeCounter;
+
+        if (checkHit() == true) {
+          lifeCounter = lifeCounter - 1;
+        }
+        if (lifeCounter <= 0) {
+          //reset()
+        }
+        if (gravityCountdown == 0) {
+          gravityCountdown = 100;
+          moveDown();
+        }
+        gravityCountdown = gravityCountdown - 1;
+
+        if (increaseDifficulty == 0 && moveBoxCountDownInit > 1) {
+          moveBoxCountDownInit = moveBoxCountDownInit - 1;
+          increaseDifficulty = 1000;
+        }
+        increaseDifficulty = increaseDifficulty - 1;
+
+        if (moveBoxCountDown == 0) {
+          moveBoxCountDown = moveBoxCountDownInit;
+          moveleft1();
+          moveleft2();
+          moveleft3();
+        }
+        moveBoxCountDown = moveBoxCountDown - 1;
+      }, 1);
+
+      function reset() {
+        lifeCounter = 100;
+        timeCounter = 10000000;
+        document.getElementById("wall1").style.right = 0 + "px";
+        document.getElementById("wall1").style.bottom = 0 + "px";
+        document.getElementById("wall2").style.right = -300 + "px";
+        document.getElementById("wall2").style.bottom = 300 + "px";
+        document.getElementById("wall3").style.right = -600 + "px";
+        document.getElementById("wall3").style.bottom = 0 + "px";
+        document.getElementById("bird").style.right = 500 + "px";
+        document.getElementById("bird").style.bottom = 0 + "px";
+      }
+
+      function checkHit() {
+        var wall1PositionRight = parseInt(
+          document.getElementById("wall1").style.right
+        );
+        var wall2PositionRight = parseInt(
+          document.getElementById("wall2").style.right
+        );
+        var wall3PositionRight = parseInt(
+          document.getElementById("wall3").style.right
+        );
+        var wall1PositionBottom = parseInt(
+          document.getElementById("wall1").style.bottom
+        );
+        var wall2PositionBottom = parseInt(
+          document.getElementById("wall2").style.bottom
+        );
+        var wall3PositionBottom = parseInt(
+          document.getElementById("wall3").style.bottom
+        );
+
+        var birdPositionRight = parseInt(
+          document.getElementById("bird").style.right
+        );
+        var birdPositionBottom = parseInt(
+          document.getElementById("bird").style.bottom
+        );
+
+        if (
+          birdPositionRight < wall1PositionRight + 50 &&
+          birdPositionRight > wall1PositionRight &&
+          birdPositionBottom <= wall1PositionBottom + 200 &&
+          birdPositionBottom >= wall1PositionBottom
+        ) {
+          return true;
+        }
+
+        if (
+          birdPositionRight < wall2PositionRight + 50 &&
+          birdPositionRight > wall2PositionRight &&
+          birdPositionBottom <= wall2PositionBottom + 200 &&
+          birdPositionBottom >= wall2PositionBottom
+        ) {
+          return true;
+        }
+
+        if (
+          birdPositionRight < wall3PositionRight + 50 &&
+          birdPositionRight > wall3PositionRight &&
+          birdPositionBottom <= wall3PositionBottom + 200 &&
+          birdPositionBottom >= wall3PositionBottom
+        ) {
+          return true;
+        }
+      }
+      function moveDown() {
+        var birdPosition =
+          parseInt(document.getElementById("bird").style.bottom) || 0;
+        if (birdPosition >= 1) {
+          document.getElementById("bird").style.bottom =
+            birdPosition - 30 + "px";
+        }
+      }
+
+      function moveleft1() {
+        var startPosition1 = 0;
+        var wall1Position = parseInt(
+          document.getElementById("wall1").style.right
+        );
+        if (wall1Position == NaN) {
+          wall1Position = startPosition1;
+        }
+        if (wall1Position <= 2000) {
+          document.getElementById("wall1").style.right =
+            wall1Position + 15 + "px";
+        } else {
+          document.getElementById("wall1").style.right = startPosition1 + "px";
+        }
+      }
+
+      function moveleft2() {
+        var startPosition2 = -600;
+        var wall2Position = parseInt(
+          document.getElementById("wall2").style.right
+        );
+        if (wall2Position == NaN) {
+          wall2Position = startPosition2;
+        }
+
+        if (wall2Position <= 2000) {
+          document.getElementById("wall2").style.right =
+            wall2Position + 15 + "px";
+        } else {
+          document.getElementById("wall2").style.right = startPosition2 + "px";
+        }
+      }
+
+      function moveleft3() {
+        var startPosition3 = -300;
+        var wall3Position = parseInt(
+          document.getElementById("wall3").style.right
+        );
+        if (wall3Position == NaN) {
+          wall3Position = startPosition3;
+        }
+
+        if (wall3Position <= 2000) {
+          document.getElementById("wall3").style.right =
+            wall3Position + 15 + "px";
+        } else {
+          document.getElementById("wall3").style.right = startPosition3 + "px";
+        }
+      }
+
+      function jump() {
+        var birdPosition =
+          parseInt(document.getElementById("bird").style.bottom) || 0;
+        document.getElementById("bird").style.bottom = birdPosition + 50 + "px";
+      }
+    </script>
+  </head>
+
+  <body onclick="jump()">
+    <main>
+      <div class="navbar">
+        <a href="./passwordtest.html"
+          ><i class="fa fa-fw fa-key"></i>Check Password Conplexity</a
+        >
+        <a href="./encryption.html"
+          ><i class="fa fa-fw fa-unlock"></i>Encryptation and Decryptation</a
+        >
+        <a class="active" href="./flappybird.html"
+          ><i class="fa fa-fw fa-dove"></i>Flappy Bird</a
+        >
+        <a href="./catphotoapp.html"
+          ><i class="fa fa-fw fa-cat"></i>Cat Photo App</a
+        >
+      </div>
+
+      <h2>Flappy Bird</h2>
+      <div id="counter"></div>
+    </main>
+    <div id="bird">
+      <img alt="" width="50px" height="50px" src="./bird.png" />
+    </div>
+    <div id="wall1">wall1</div>
+    <div id="wall2">wall2</div>
+    <div id="wall3">wall3</div>
+    <script>
+      reset();
+    </script>
+  </body>
+</html>
