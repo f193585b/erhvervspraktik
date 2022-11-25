@@ -14,7 +14,13 @@
         position: absolute;
         right: 50%;
         bottom: 0%;
-        /* background-color: yellow; */
+        background-image: url('bird.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      #explosion{
+        font-size: x-large;
+        display: none;
       }
 
       #wall1 {
@@ -80,17 +86,35 @@
 
     <script>
       var lifeCounter = 100;
-      var timeCounter = 10000000;
+      var timeCounter = 11000;
       var moveBoxCountDownInit = 10;
       var moveBoxCountDown = 100;
       var increaseDifficulty = 1000;
       var gravityCountdown = 100;
-      setInterval(function () {
-        //timeCounter = timeCounter - 1;
-        document.getElementById("counter").innerText = lifeCounter;
+      showExplosion = false;
+      intervalId = setInterval(function () {
+        if(showExplosion){
+          showExplosion = false;
+        }
+        timeCounter = timeCounter - 1;
+        if(timeCounter<1){
+          clearInterval(intervalId)
+        }
+        if(lifeCounter<1){
+          clearInterval(intervalId)
+        }
+        document.getElementById("life").innerText = lifeCounter;
+        document.getElementById("time").innerText = timeCounter;
 
         if (checkHit() == true) {
           lifeCounter = lifeCounter - 1;
+          showExplosion = true;
+        }
+        if(showExplosion) {
+          document.getElementById("explosion").style.display = "block"
+        }
+        else {
+          document.getElementById("explosion").style.display = "none"
         }
         if (lifeCounter <= 0) {
           //reset()
@@ -118,7 +142,7 @@
 
       function reset() {
         lifeCounter = 100;
-        timeCounter = 10000000;
+        timeCounter = 11000;
         document.getElementById("wall1").style.right = 0 + "px";
         document.getElementById("wall1").style.bottom = 0 + "px";
         document.getElementById("wall2").style.right = -300 + "px";
@@ -268,14 +292,16 @@
       </div>
 
       <h2>Flappy Bird</h2>
-      <div id="counter"></div>
+      <div id="life"></div>
+      <div id="time"></div>
     </main>
-    <div id="bird">
-      <img alt="" width="50px" height="50px" src="./bird.png" />
-    </div>
+    
     <div id="wall1">wall1</div>
     <div id="wall2">wall2</div>
     <div id="wall3">wall3</div>
+    <div id="bird">
+      <div id="explosion">💥</div>
+    </div>
     <script>
       reset();
     </script>
