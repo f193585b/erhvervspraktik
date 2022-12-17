@@ -1,0 +1,150 @@
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <script src="./crypto.js"></script>
+    <style>
+      .navbar {
+        width: 100%;
+        background-color: rgb(0, 0, 77);
+        overflow: auto;
+        border-right-width: 5px;
+        border-right-color: whitesmoke;
+      }
+
+      .navbar a {
+        float: left;
+        padding: 12px;
+        border-style: solid dotted none none;
+        color:  whitesmoke;
+        text-decoration: none;
+        font-size: 17px;
+      }
+
+      .navbar a:hover {
+        background-color: rgb(84, 2, 84);
+      }
+
+      .active {
+        background-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="./passwordtest.html"
+        ><i class="fa fa-fw fa-key"></i>Check Password Conplexity</a
+      >
+      <a class="active" href="./encryption.html"
+        ><i class="fa fa-fw fa-unlock"></i>Encryptation and Decryptation</a
+      >
+      <a href="./flappybird.html"
+        ><i class="fa fa-fw fa-dove"></i>Flappy Bird</a
+      >
+      <a href="./catphotoapp.html"
+        ><i class="fa fa-fw fa-cat"></i>Cat Photo App</a
+      >
+    </div>
+
+    <h1>Encryptation and decryptation</h1>
+    <h2>Encryption password test</h2>
+    <input type="text" id="inputPassword" />
+    <div id="passwordtest">password is ok:</div>
+    <button type="button" onclick="testPassword()">Click Me!</button>
+    <div id="Encryptedpassword">encrypted password</div>
+
+    <h2>Encryption password test the wrong way</h2>
+    <input type="text" id="inputPasswordTheWrongWay" />
+    <div id="passwordtestTheWrongWay">password is ok:</div>
+    <button type="button" onclick="testPasswordTheWrongWay()">Click Me!</button>
+    <div id="EncryptedpasswordTheWrongWay">encrypted password</div>
+
+    <h2>Encrypt message test</h2>
+    <div>
+      <label
+        >Password for encryption<input type="text" id="passwordEncryption"
+      /></label>
+    </div>
+    <div>
+      <label
+        >Message for decryption<input type="text" id="messageEncryption"
+      /></label>
+    </div>
+    <button type="button" onclick="encryptMessage()">Encryption!</button>
+    <div id="EncryptedMessage">encrypted message</div>
+
+    <h2>decrypt message test</h2>
+    <div>
+      <label>
+        Password for decryption <input type="text" id="passwordDecryption"
+      /></label>
+    </div>
+    <div>
+      <label>
+        Message for decryption <input type="text" id="messageDecryption"
+      /></label>
+    </div>
+    <button type="button" onclick="decryptMessage()">Decryption!</button>
+    <div id="DecryptedMessage">decrypted message</div>
+    <script>
+      function testPassword() {
+        password = document.getElementById("inputPassword").value;
+
+        encryptedPassword = CryptoJS.SHA256(password).toString(
+          CryptoJS.enc.Hex
+        );
+        document.getElementById("Encryptedpassword").textContent =
+          encryptedPassword;
+        document.getElementById("passwordtest").textContent =
+          "the password tested " +
+          ("e2efd5111246444fe707934d610880aa1405483b03c23041bf28a5be5c06b44c" ==
+            encryptedPassword);
+      }
+
+      function testPasswordTheWrongWay() {
+        password = document.getElementById("inputPasswordTheWrongWay").value;
+        const key = "VerySecretPasswordThatNobodyKnowsExceptUsHaHaHa";
+
+        const passwordPlainText = CryptoJS.AES.decrypt(
+          "U2FsdGVkX19dJimn2C21Ycsc+FqOt8Qydw1msfKtaaw=",
+          key
+        ).toString(CryptoJS.enc.Utf8);
+        const encryptedPassword = CryptoJS.AES.encrypt(
+          password,
+          key
+        ).toString();
+
+        document.getElementById("EncryptedpasswordTheWrongWay").textContent =
+          encryptedPassword;
+
+        document.getElementById("passwordtestTheWrongWay").textContent =
+          "the password tested " + (passwordPlainText == password);
+      }
+
+      function encryptMessage() {
+        password = document.getElementById("passwordEncryption").value;
+        message = document.getElementById("messageEncryption").value;
+        const key = password;
+
+        const cipher = CryptoJS.AES.encrypt(message, key);
+
+        // e.g. B6AeMHPHkEe7/KHsZ6TW/Q==
+        document.getElementById("EncryptedMessage").textContent =
+          CryptoJS.AES.encrypt(message, password).toString();
+      }
+      function decryptMessage() {
+        password = document.getElementById("passwordDecryption").value;
+        message = document.getElementById("messageDecryption").value;
+        const key = password;
+
+        const cipher = CryptoJS.AES.decrypt(message, key);
+
+        // e.g. B6AeMHPHkEe7/KHsZ6TW/Q==
+        document.getElementById("DecryptedMessage").textContent =
+          cipher.toString(CryptoJS.enc.Utf8);
+      }
+    </script>
+  </body>
+</html>
